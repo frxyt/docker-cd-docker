@@ -19,6 +19,7 @@ RUN set -ex; \
     pip3 install j2cli[yaml];
 
 RUN set -ex; \
+    cat /etc/alpine-release; \
     bash --version; \
     curl --version; \
     docker --version; \
