@@ -16,7 +16,7 @@ RUN set -ex; \
         git \
         python3 \
         py3-pip; \
-    pip3 install j2cli[yaml];
+    pip3 install --break-system-packages j2cli[yaml];
 
 RUN set -ex; \
     cat /etc/alpine-release; \
