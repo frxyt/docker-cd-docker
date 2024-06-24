@@ -14,7 +14,7 @@ RUN set -ex; \
         docker-cli-compose \
         docker-compose \
         git \
-        python3 \
+        python3~3.11 \
         py3-pip; \
     pip3 install --break-system-packages \
         j2cli[yaml] \
