@@ -17,7 +17,7 @@ RUN set -ex; \
         jq \
         python3 \
         py3-pip; \
-    pip3 install --break-system-packages j2cli[yaml];
+    pip3 install --break-system-packages j2cli[yaml]; \
     pip3 install --break-system-packages yq;
 
 RUN set -ex; \
