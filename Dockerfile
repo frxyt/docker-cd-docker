@@ -14,9 +14,11 @@ RUN set -ex; \
         docker-cli-compose \
         docker-compose \
         git \
+        jq \
         python3 \
         py3-pip; \
     pip3 install --break-system-packages j2cli[yaml];
+    pip3 install --break-system-packages yq;
 
 RUN set -ex; \
     cat /etc/alpine-release; \
@@ -27,7 +29,9 @@ RUN set -ex; \
     docker-compose --version; \
     git --version; \
     j2 --version; \
-    python3 --version;
+    jq --version; \
+    python3 --version; \
+    yq --version;
 
 WORKDIR /work
 
