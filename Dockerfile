@@ -2,7 +2,7 @@
 # Copyright (c) 2022 Jérémy WALTHER <jeremy.walther@golflima.net>
 # See <https://github.com/frxyt/docker-cd-docker> for details.
 
-FROM alpine:latest
+FROM alpine:3.19
 LABEL maintainer="Jérémy WALTHER <jeremy@ferox.yt>"
 
 RUN set -ex; \
@@ -14,7 +14,7 @@ RUN set -ex; \
         docker-cli-compose \
         docker-compose \
         git \
-        python3~3.11 \
+        python3 \
         py3-pip; \
     pip3 install --break-system-packages \
         j2cli[yaml] \
