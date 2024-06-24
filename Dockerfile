@@ -14,11 +14,12 @@ RUN set -ex; \
         docker-cli-compose \
         docker-compose \
         git \
-        jq \
         python3 \
         py3-pip; \
-    pip3 install --break-system-packages j2cli[yaml]; \
-    pip3 install --break-system-packages yq;
+    pip3 install --break-system-packages \
+        j2cli[yaml] \
+        jq \
+        yq;
 
 RUN set -ex; \
     cat /etc/alpine-release; \
