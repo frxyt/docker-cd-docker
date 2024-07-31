@@ -21,11 +21,19 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push - frxyt/cd-docker
+      - name: Build and push - frxyt/cd-docker:v1
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile
+          file: ./Dockerfile.v1
           push: true
           tags: |
-            frxyt/cd-docker
+            frxyt/cd-docker:v1
+      - name: Build and push - frxyt/cd-docker:v2
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile.v2
+          push: true
+          tags: |
+            frxyt/cd-docker:v2

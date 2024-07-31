@@ -1,8 +1,8 @@
-# Copyright (c) 2022 FEROX YT EIRL, www.ferox.yt <devops@ferox.yt>
-# Copyright (c) 2022 Jérémy WALTHER <jeremy.walther@golflima.net>
+# Copyright (c) 2022,2023,2024 FEROX YT EIRL, www.ferox.yt <devops@ferox.yt>
+# Copyright (c) 2022,2023,2024 Jérémy WALTHER <jeremy.walther@golflima.net>
 # See <https://github.com/frxyt/docker-cd-docker> for details.
 
-FROM alpine:3.19
+FROM alpine:3.20
 LABEL maintainer="Jérémy WALTHER <jeremy@ferox.yt>"
 
 RUN set -ex; \
@@ -14,12 +14,9 @@ RUN set -ex; \
         docker-cli-compose \
         docker-compose \
         git \
-        jq \
-        python3 \
-        py3-pip; \
-    pip3 install --break-system-packages \
-        j2cli[yaml] \
-        yq;
+        jinja2-cli \
+        jq \ 
+        yq-python
 
 RUN set -ex; \
     cat /etc/alpine-release; \
@@ -29,9 +26,8 @@ RUN set -ex; \
     docker compose version; \
     docker-compose --version; \
     git --version; \
-    j2 --version; \
+    jinja2 --version; \
     jq --version; \
-    python3 --version; \
     yq --version;
 
 WORKDIR /work
