@@ -9,6 +9,7 @@ RUN set -ex; \
     apk add --no-cache \
         bash \
         ca-certificates \
+        coreutils \
         curl \
         docker \
         docker-cli-compose \
